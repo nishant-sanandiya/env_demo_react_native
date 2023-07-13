@@ -8,12 +8,20 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "pod": "cd ios && pod install"
+    "android:clean": "cd android && ./gradlew clean",
+    "android:staging": "react-native run-android --mode=stagingDebug",
+    "android:development": "react-native run-android --mode=developmentDebug",
+    "android:production": "react-native run-android --mode=productionDebug",
+    "android:stagingRelease": "react-native build-android --mode=stagingRelease",
+    "android:developmentRelease": "react-native build-android --mode=developmentRelease",
+    "android:productionRelease": "react-native build-android --mode=productionRelease",
+    "android:productionBundle": "cd android && ./gradlew clean && ./gradlew bundleProductionRelease",
+    "ios:pod": "cd ios && pod install"
   },
   "dependencies": {
     "react": "18.2.0",
     "react-native": "0.71.0",
-    "react-native-config": "^1.5.1"
+    "react-native-config": "1.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

@@ -12,7 +12,8 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-target 'Findgrind' do
+abstract_target 'FindgrindCommonPods' do
+  
   config = use_native_modules!
 
   # Flags change depending on the env values.
@@ -48,4 +49,15 @@ target 'Findgrind' do
     )
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
   end
+  
+  target 'FindgrindProduction' do
+  end
+
+  target 'FindgrindStaging' do
+  end
+
+  target 'FindgrindDevelopment' do
+  end
+  
+  
 end
